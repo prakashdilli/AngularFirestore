@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <mat-card >
+      <mat-card-title *ngIf="login">Login</mat-card-title>
+      <mat-card-title *ngIf="!login">Register</mat-card-title>
+    <div class="form"  [formGroup]="user">
+      <mat-form-field>
+        <input matInput placeholder="Username" type="text" formControlName="username" required>
+        <mat-error  *ngIf="user.get('username').touched && user.get('username').hasError('required')">Username is required</mat-error>
+      </mat-form-field>
+      <mat-form-field >
+        <input matInput placeholder="Password" type="password" formControlName="password" required>
+        <mat-error  *ngIf="user.get('password').touched && user.get('password').hasError('required')">Password is required</mat-error>
+      </mat-form-field>
+    </div>
+    <button *ngIf="login"  mat-raised-button (click)="signIn()" color="primary" [disabled]="user.invalid">Sign In</button>
+    <p *ngIf="login">Don't have a account? <a (click)="toggle()" class="textStyle">Sign Up</a></p> 
+    <button *ngIf="!login" mat-raised-button (click)="signUp()" color="primary" [disabled]="user.invalid">Sign Up</button>
+    <p *ngIf="!login">Already registered?  <a (click)="toggle()" class="textStyle">Sign In</a></p>
+  </mat-card>
+</div>

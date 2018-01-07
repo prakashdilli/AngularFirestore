@@ -1,0 +1,35 @@
+.example-header-image {
+    background-image: url('../../assets/avatar.jpg');
+    background-size: cover;
+  }
+
+  .example-card {
+    width: 800px;
+  }
+
+  .signout{
+      flex-grow: 1;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  mat-card-header{
+      margin-bottom:12px;
+  }
+
+  .mat-card-header-text {
+   
+    margin-top: 10px;
+    margin-left: 18px;
+}
+
+.mat-card-content, .mat-card-header .mat-card-title, .mat-card-subtitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+mat-card-title.mat-card-title {
+    margin-top: 10px;
+}
